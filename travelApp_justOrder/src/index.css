@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-primary-50 via-white to-accent-50 min-h-screen;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+
+  .interest-chip {
+    @apply px-4 py-3 rounded-xl border-2 transition-all duration-300 cursor-pointer
+           hover:scale-105 active:scale-95 select-none;
+  }
+
+  .interest-chip-selected {
+    @apply bg-primary-500 border-primary-500 text-white shadow-lg shadow-primary-500/30;
+  }
+
+  .interest-chip-unselected {
+    @apply bg-white border-gray-200 text-gray-700 hover:border-primary-300 hover:bg-primary-50;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
